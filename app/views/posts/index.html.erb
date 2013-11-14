@@ -1,5 +1,12 @@
-<ul>
-  <li ng-repeat='post in posts'>
+<div>
+  Search: <input ng-model='query'><br />
+  Sort by: <select ng-model='orderProp'>
+    <option value='title'>Alphabetical</option>
+    <option value='age'>Newest</option>
+  </select>
+</div>
+<ul class='posts'>
+  <li ng-repeat='post in posts | filter:query | orderBy:orderProp'>
     <span>{{ post.title }}</span>
   </li>
 </ul>

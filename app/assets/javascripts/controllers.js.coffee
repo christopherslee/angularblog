@@ -1,14 +1,13 @@
 app = angular.module('angularblogApp', [])
 
 class BlogListCtrl
-  @$inject: ['$scope']
-
   constructor: ($scope) ->
     $scope.posts = [
-      { title: 'Blog Post #1' }
-      { title: 'Blog Post #2' }
-      { title: 'Blog Post #3' }
+      { title: 'Z Blog Post One', age: 1 }
+      { title: 'Y Blog Post Two', age: 2 }
+      { title: 'X Blog Post Three', age: 3}
     ]
-    $scope.ctrl = @
+
+    $scope.orderProp = 'age'
 
 app.controller 'BlogListCtrl', BlogListCtrl
